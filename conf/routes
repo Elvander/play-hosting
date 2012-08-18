@@ -5,5 +5,15 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+
+# Application REST
+
+GET		/api/applications				controllers.ApplicationsController.allApps()
+POST	/api/applications				controllers.ApplicationsController.newApp()
+
+GET		/api/applications/:id			controllers.ApplicationsController.getApp(id:Long)
+PUT		/api/applications/:id			controllers.ApplicationsController.updateApp(id:Long)
+
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)

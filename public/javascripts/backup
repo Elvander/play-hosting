@@ -1,0 +1,7 @@
+# --- !Ups
+
+insert into Application (id, name, subscript, deployDir) values (1, 'Fireplug website', 'Balblab', 'TODO')
+
+# --- !Downs
+
+delete from Application;
