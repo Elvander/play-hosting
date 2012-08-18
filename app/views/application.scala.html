@@ -1,0 +1,46 @@
+@(message: String)(content: Html)
+
+@main("Welcome to Play 2.0") {
+    
+	<div class="row-fluid">
+        <div class="span2">
+          <div class="well sidebar-nav">
+            <ul class="nav nav-list">
+              <li class="nav-header">Application</li>
+              <li class="active"><a href="#"><i class="icon-home"></i> Overview</a></li>
+              <li><a href="#"><i class="icon-fire"></i> Statistics</a></li>
+              <li><a href="#"><i class="icon-bullhorn"></i> Logs</a></li>
+              <li class="nav-header">Something</li>
+              <li><a href="#">Database</a></li>
+              <li><a href="#">Storage</a></li>
+              <li class="nav-header">Management</li>
+              <li><a href="#"><i class="icon-user"></i> Users</a></li>
+              <li><a href="#"><i class="icon-book"></i> Plugins</a></li>
+            </ul>
+          </div><!--/.well -->
+        </div><!--/span-->
+		
+		
+		<div class="span10">
+			<!-- Breadcrumb -->
+			<div>
+		        <ul class="breadcrumb">
+		          <li>
+		            <a href="#">Home</a> <span class="divider">/</span>
+		          </li>
+		          <li>
+		            <a href="#">Library</a> <span class="divider">/</span>
+		          </li>
+		          <li class="active">Data</li>
+		        </ul>
+		    </div>
+		    
+		    <!-- Content block -->
+		   	@content
+		    
+		</div><!-- content span -->
+		
+      </div><!--/row-->
+	
+
+}
