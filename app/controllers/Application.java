@@ -11,4 +11,8 @@ public class Application extends Controller {
     return ok(index.render("Your new application is ready."));
   }
   
+  public static Result application(Long id) {
+	  return ok(application.render("Hoera"));
+  }
+  
 }

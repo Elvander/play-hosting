@@ -13,7 +13,14 @@ var AppRouter = Backbone.Router.extend({
 	
 })
 
-utils.loadTemplate(['ApplicationListItemView'], function(){
+utils.loadTemplate(['ApplicationListItemView','NewApplicationView'], function(){
 	app = new AppRouter();
 	Backbone.history.start();
 })
+
+function newProject() {
+	
+	$("#modal").html(new NewApplicationView({model: new Application()}).el);
+	$("#modal").modal();
+	
+}

@@ -5,6 +5,9 @@
 # Home page
 GET     /                           controllers.Application.index()
 
+#Application
+GET		/application/:id				controllers.Application.application(id:Long)
+
 
 # Application REST
 

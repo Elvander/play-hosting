@@ -4,7 +4,7 @@ window.Application = Backbone.Model.extend({
 	
 	defaults: {
 		id: null,
-		name: "",
+		name: "Name",
 		subscript: "Play! Application",
 		deployDir: ""
 	}

@@ -1,5 +1,7 @@
 package controllers;
 
+import org.codehaus.jackson.JsonNode;
+
 import models.App;
 import play.*;
 import play.mvc.*;
@@ -11,7 +13,10 @@ public class ApplicationsController extends Controller {
 
 	@BodyParser.Of(Json.class)
 	public static Result newApp() {
-		return ok();
+		JsonNode json = request().body().asJson();
+		App app =  play.libs.Json.fromJson(json, App.class);
+		app.save();
+		return ok(play.libs.Json.toJson(app));
 	}
 	
 	public static Result allApps() {
