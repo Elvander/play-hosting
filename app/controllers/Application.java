@@ -1,5 +1,6 @@
 package controllers;
 
+import models.App;
 import play.*;
 import play.mvc.*;
 
@@ -8,11 +9,12 @@ import views.html.*;
 public class Application extends Controller {
   
   public static Result index() {
-    return ok(index.render("Your new application is ready."));
+    return ok(index.render());
   }
   
   public static Result application(Long id) {
-	  return ok(application.render("Hoera"));
+	  App app = App.find.byId(id);
+	  return ok(application.render(app));
   }
   
 }

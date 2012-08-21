@@ -1,21 +1,28 @@
-@(message: String)
+@(app: App)
 
-@main("Welcome to Play 2.0") {
+@scripts = {
+        <script src="@routes.Assets.at("javascripts/models/applications.js")"></script>        
+        <script src="@routes.Assets.at("javascripts/views/ApplicationViews.js")"></script>
+        <script src="@routes.Assets.at("javascripts/app.js")"></script>
+}
+
+@main("Welcome to Play 2.0", scripts) {
     
 	<div class="row-fluid">
         <div class="span2">
           <div class="well sidebar-nav">
             <ul class="nav nav-list">
               <li class="nav-header">Application</li>
-              <li class="active"><a href="#"><i class="icon-home"></i> Overview</a></li>
-              <li><a href="#"><i class="icon-fire"></i> Statistics</a></li>
-              <li><a href="#"><i class="icon-bullhorn"></i> Logs</a></li>
-              <li class="nav-header">Something</li>
-              <li><a href="#">Database</a></li>
-              <li><a href="#">Storage</a></li>
-              <li class="nav-header">Management</li>
-              <li><a href="#"><i class="icon-user"></i> Users</a></li>
-              <li><a href="#"><i class="icon-book"></i> Plugins</a></li>
+              <li class="overview-menu"><a href="#overview"><i class="icon-home"></i> Overview</a></li>
+              <li class="settings-menu"><a href="#settings"><i class="icon-wrench"></i> Settings</a></li>
+              <li class="stats-menu"><a href="#"><i class="icon-align-left"></i> Statistics</a></li>
+              <li class="logs-menu"><a href="#"><i class="icon-list-alt"></i> Logs</a></li>
+              <li class="nav-header">Data</li>
+              <li><a href="#"><i class="icon-globe"></i> Database</a></li>
+              <li><a href="#"><i class="icon-hdd"></i> Storage</a></li>
+              <li class="nav-header">Commands</li>
+              <li><a href="#stop/@app.id"><i class="icon-play"></i> Start</a></li>
+              <li><a href="#start/@app.id"><i class="icon-stop"></i> Stop</a></li>
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
@@ -26,17 +33,17 @@
 			<div>
 		        <ul class="breadcrumb">
 		          <li>
-		            <a href="#">Home</a> <span class="divider">/</span>
+		            <a href="/">Home</a> <span class="divider">/</span>
 		          </li>
 		          <li>
-		            <a href="#">Library</a> <span class="divider">/</span>
+		            <a href="/application/@app.id">@app.name</a> <span class="divider">/</span>
 		          </li>
-		          <li class="active">Data</li>
+		          <li class="active">Overview</li>
 		        </ul>
 		    </div>
 		    
 		    <!-- Content block -->
-		   	
+		   	<div id="content">@app.name</div>
 		    
 		</div><!-- content span -->
 		

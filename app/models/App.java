@@ -1,10 +1,13 @@
 package models;
 
+import java.io.File;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import play.Play;
 import play.db.ebean.Model;
 import play.db.ebean.Model.Finder;
 
@@ -23,5 +26,14 @@ public class App extends Model {
 	
 	public static Finder<Long, App> find = new Finder<Long, App>(Long.class, App.class);
 	
+    public boolean isRunning() {
+        File file = new File(getApplicationPath() + "/server.pid");
+        return file.exists();
+    }
+	
+    private String getApplicationPath() {
+        String appsdir = "/home/bart/play-workspace/fireplug-repo/website/trunk"; //Play.application().configuration().getString("app.appsdirectory");
+        return appsdir;
+    }
 	
 }

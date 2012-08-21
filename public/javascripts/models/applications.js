@@ -1,6 +1,6 @@
 window.Application = Backbone.Model.extend({
 	
-	urlRoot: "api/applications",
+	urlRoot: "/api/applications",
 	
 	defaults: {
 		id: null,
@@ -15,6 +15,6 @@ window.ApplicationCollection =  Backbone.Collection.extend({
 	
 	model: Application,
 	
-	url: "api/applications"
+	url: "/api/applications"
 	
 })
